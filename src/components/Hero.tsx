@@ -29,13 +29,13 @@ const Hero = () => {
         </h1>
 
         <p className="mt-6 text-lg text-gray-400 max-w-2xl font-mono">
-          I build interactive, responsive, and high-performance web applications that merge creativity with functionality.
+          I turn complex ideas into sleek, fast, and scalable apps that just work.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <GlitchLink
             href="#contacts"
-            text="Contact me!!"
+            text="Contact me"
             className="border border-green-400 text-green-400 px-8 py-3 font-semibold tracking-widest uppercase hover:bg-green-400/10 transition-colors duration-300"
           />
         </div>

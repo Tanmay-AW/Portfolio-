@@ -18,12 +18,13 @@ const contactLinks = [
         text: 'Tanmay Gunwant',
         icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     },
-    {
-        href: 'https://x.com/tanmay_gunwant',
-        label: 'Twitter/X',
-        text: 'Tanmay Gunwant',
-        icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-    }
+{
+href: 'https://x.com/tanmay_gunwant',
+label: 'Twitter/X',
+text: 'Tanmay Gunwant',
+icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 300 271" fill="none"><path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z" fill="currentColor"></path></svg>
+}
+
 ]
 
 const Contact = () => {
@@ -37,7 +38,7 @@ const Contact = () => {
             <span className="text-green-400">#</span>Contacts
           </h2>
           <p className="text-gray-400 text-lg">
-            I'm interested in freelance opportunities and ambitious projects. However, if you have other requests or questions, don't hesitate to reach out.
+            I'm interested in freelance opportunities and ambitious projects. <br />Got an idea? Let’s turn it into a deploy link.
           </p>
         </div>
 

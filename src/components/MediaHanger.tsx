@@ -1,9 +1,9 @@
 // src/components/LeftSidebar.tsx
 
-
+import resumePDF from '../assets/Resume.pdf';
 const socialLinks = [
   {
-    href: 'https://github.com/tanmaygunwant',
+    href: 'https://github.com/Tanmay-AW',
     label: 'GitHub',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -21,7 +21,7 @@ const socialLinks = [
     ),
   },
   {
-    href: '/path-to-your-resume.pdf', // IMPORTANT: Update this path
+    href: resumePDF, 
     label: 'Resume',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

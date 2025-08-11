@@ -4,6 +4,9 @@ import GlitchLink from '../components/GlitchLink';
 import Navbar from '../components/Navbar';
 import MediaHanger from '../components/MediaHanger';
 import Footer from '../components/Footer';
+import hivemindImage from '../assets/hivemind.png';
+import mindloomImage from '../assets/mindloom.png';
+import portfolioImage from '../assets/portfolio.png';
 
 const projectsData = [
   {
@@ -13,16 +16,16 @@ const projectsData = [
     techStack: ['React.js', 'Node.js', 'WebSockets', 'MongoDB', 'Tailwind CSS', 'AI API'],
     liveLink: 'https://hive-mind-ai.vercel.app',
     githubLink: 'https://github.com/Tanmay-AW/HiveMind.git',
-    imageUrl: 'https://placehold.co/600x400/000000/0f0?text=HiveMind',
+    imageUrl: hivemindImage,
   },
   {
     title: 'MindLoom',
-    subtitle: 'AI-Powered Mental Fitness App',
+    subtitle: 'AI-Powered Mental Fitness Web App',
     description: 'A mobile-first mental wellness platform that delivers 5-minute daily routines for focus, emotional clarity, and resilience. Features journaling, breathing exercises, mood tracking, and a personal AI coach. Built with performance-first principles to ensure fast load times and smooth interactions on any device.',
     techStack: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'AI API'],
     liveLink: 'https://mindloom-ecru.vercel.app',
     githubLink: 'https://github.com/Tanmay-AW/MindLoom.git',
-    imageUrl: 'https://placehold.co/600x400/000000/0f0?text=MindLoom',
+    imageUrl: mindloomImage,
   },
   {
     title: 'Portfolio Website',
@@ -30,8 +33,8 @@ const projectsData = [
     description: 'A handcrafted, performance-optimized site that showcases my work, skills, and workflow. Built from scratch with pixel-perfect UI implementation and strong attention to accessibility and responsive design.',
     techStack: ['React.js', 'Tailwind CSS', 'Vite', 'TypeScript'],
     liveLink: '/home',
-    githubLink: '#',
-    imageUrl: 'https://placehold.co/600x400/000000/0f0?text=Portfolio',
+    githubLink: 'https://github.com/Tanmay-AW/Portfolio-.git',
+    imageUrl: portfolioImage,
   },
 ];
 

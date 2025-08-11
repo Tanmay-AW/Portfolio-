@@ -74,9 +74,9 @@ const MatrixIntro: React.FC = () => {
         timers.push(
           window.setTimeout(() => {
             navigate("/home");
-          }, 1000)
+          }, 400)
         );
-      }, 6500)
+      }, 6000)
     );
 
     return () => {

@@ -23,7 +23,7 @@ const projectData = [
     description: 'My custom-designed personal portfolio to showcase my skills and projects.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     liveLink: '#home',
-    githubLink: '',
+    githubLink: 'https://github.com/Tanmay-AW/Portfolio-.git',
   },
 ];
 

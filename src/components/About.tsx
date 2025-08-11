@@ -22,7 +22,8 @@ const About = () => {
               I create fast, responsive, and user-focused applications from scratch and bring ideas to life through functional, modern design.
             </p>
             <p>
-              My mission: Build software that solves real problems and make it accessible to everyone.
+              Three years ago, I was the guy Googling ‘how to center a div.’ Now I build tools that help others code in real-time. My next target? Mastering scalable cloud architectures.
+
             </p>
           </div>
       
