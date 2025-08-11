@@ -1,0 +1,9 @@
+/* src/index.css */
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black text-white font-mono;
+}
