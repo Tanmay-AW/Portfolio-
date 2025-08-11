@@ -1,9 +1,10 @@
 # Tanmay Gunwant - Personal Portfolio v1.0
 
+![Portfolio Screenshot](.src/assets/portfolio.png)
 
 This is the source code for my personal developer portfolio, designed to showcase my skills, projects, and professional philosophy. The site is built from scratch with a distinct focus on performance, responsiveness, and a memorable user experience.
 
-**Live Demo:** [**tanmaygunwant.dev**](https://your-live-url.com) *(<- Add your live URL here)*
+**Live Demo:** [**tanmaygunwant**](https://your-live-url.com) *(<- Add your live URL here)*
 
 ---
 

@@ -1,6 +1,6 @@
 // src/pages/Home.tsx
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Import Page Section Components
 import Hero from '../components/Hero';
