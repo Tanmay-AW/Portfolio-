@@ -1,6 +1,5 @@
 # Tanmay Gunwant - Personal Portfolio v1.0
 
-![Portfolio Screenshot](https://placehold.co/800x400/000000/0f0?text=Your+Screenshot+Here)
 
 This is the source code for my personal developer portfolio, designed to showcase my skills, projects, and professional philosophy. The site is built from scratch with a distinct focus on performance, responsiveness, and a memorable user experience.
 
