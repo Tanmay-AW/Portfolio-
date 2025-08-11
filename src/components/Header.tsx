@@ -1,7 +1,6 @@
-// src/components/Header.tsx
-import { type JSX } from "react";
+// src/components/Header.
 
-export default function Header(): JSX.Element {
+export default function Header() {
   return (
     <header className="w-full fixed top-0 left-0 z-40 bg-transparent backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
