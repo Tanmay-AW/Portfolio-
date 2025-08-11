@@ -1,69 +1,73 @@
-# React + TypeScript + Vite
+# Tanmay Gunwant - Personal Portfolio v1.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio Screenshot](https://placehold.co/800x400/000000/0f0?text=Your+Screenshot+Here)
 
-Currently, two official plugins are available:
+This is the source code for my personal developer portfolio, designed to showcase my skills, projects, and professional philosophy. The site is built from scratch with a distinct focus on performance, responsiveness, and a memorable user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live Demo:** [**tanmaygunwant.dev**](https://your-live-url.com) *(<- Add your live URL here)*
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Multi-Page Architecture:** A fully routed application with a homepage, a dedicated projects page, and a detailed "About Me" page.
+* **Matrix-Style Preloader:** An immersive, animated "Matrix" binary rain and system initialization sequence to welcome visitors.
+* **Interactive Cursor Effects:** A user-selectable toggle to switch between different cursor effects:
+    * **Digital Rain Trail:** A trail of fading characters that follows the mouse.
+    * **Terminal Caret:** A blinking block-style caret that replaces the default cursor.
+* **"Glitch" Hover Effect:** A custom CSS glitch animation on links and buttons for a cohesive, retro-tech feel.
+* **Fully Responsive Design:** Meticulously crafted to provide a seamless experience on all devices, from mobile phones to desktops.
+* **Component-Based Structure:** Built with reusable React components for clean, maintainable, and scalable code.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This project was built using a modern, performance-focused tech stack:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **Framework:** [React.js](https://reactjs.org/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Routing:** [React Router](https://reactrouter.com/)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Animations:** CSS Animations & HTML Canvas API
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## Getting Started
+
+To run this project locally on your machine, follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Tanmay-AW/Portfolio-.git](https://github.com/Tanmay-AW/Portfolio-.git)
+    cd your-repo-name
+    ```
+
+2.  **Install dependencies:**
+    This will install all the necessary packages defined in `package.json`.
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+    This will start the Vite development server, typically on `http://localhost:5173`.
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production:**
+    To create an optimized production build in the `dist` folder:
+    ```bash
+    npm run build
+    ```
+
+---
+
+## Contact
+
+Let's connect! I'm open to freelance opportunities and collaborative projects.
+
+* **Email:** tanmaywork172@gmail.com
+* **LinkedIn:** [linkedin.com/in/tanmaygunwantdev](https://www.linkedin.com/in/tanmaygunwantdev)
+* **GitHub:** [@Tanmay-AW](https://github.com/tanmaygunwant)
