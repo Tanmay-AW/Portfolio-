@@ -86,3 +86,71 @@ html {
 .terminal-caret {
   animation: blink 1s step-end infinite;
 }
+.data-corruption-effect {
+  position: relative;
+}
+
+.data-corruption-effect::before,
+.data-corruption-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 10;
+  pointer-events: none;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=');
+}
+
+.data-corruption-effect .loader-box::before,
+.data-corruption-effect .loader-box::after {
+    content: 'Portfolio Ready.';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #0f0;
+    background: rgba(0, 24, 0, 0.5);
+    padding: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 5px #0f0;
+}
+
+
+.data-corruption-effect::before {
+  animation: glitch-tear-1 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+.data-corruption-effect::after {
+  animation: glitch-tear-2 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+}
+@keyframes glitch-tear-1 {
+  0% { clip-path: inset(30% 0 60% 0); transform: translateX(-10px); }
+  10% { clip-path: inset(90% 0 5% 0); }
+  20% { clip-path: inset(50% 0 45% 0); transform: translateX(10px); }
+  30% { clip-path: inset(25% 0 70% 0); }
+  40% { clip-path: inset(80% 0 10% 0); transform: translateX(-10px); }
+  50% { clip-path: inset(40% 0 58% 0); }
+  60% { clip-path: inset(15% 0 80% 0); transform: translateX(5px); }
+  70% { clip-path: inset(95% 0 2% 0); }
+  80% { clip-path: inset(60% 0 35% 0); transform: translateX(-5px); }
+  90% { clip-path: inset(20% 0 75% 0); }
+  100% { clip-path: inset(70% 0 25% 0); }
+}
+
+@keyframes glitch-tear-2 {
+  0% { clip-path: inset(75% 0 10% 0); transform: translateX(10px); }
+  10% { clip-path: inset(10% 0 88% 0); }
+  20% { clip-path: inset(60% 0 30% 0); transform: translateX(-10px); }
+  30% { clip-path: inset(80% 0 5% 0); }
+  40% { clip-path: inset(25% 0 70% 0); transform: translateX(10px); }
+  50% { clip-path: inset(90% 0 8% 0); }
+  60% { clip-path: inset(40% 0 55% 0); transform: translateX(-5px); }
+  70% { clip-path: inset(5% 0 92% 0); }
+  80% { clip-path: inset(85% 0 5% 0); transform: translateX(5px); }
+  90% { clip-path: inset(35% 0 60% 0); }
+  100% { clip-path: inset(70% 0 15% 0); }
+}

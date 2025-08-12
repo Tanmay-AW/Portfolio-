@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +11,8 @@ const MatrixIntro: React.FC = () => {
   const [line4Visible, setLine4Visible] = useState(false);
   const [statusVisible, setStatusVisible] = useState(false);
   const [progressWidth, setProgressWidth] = useState("0%");
-  const [fadingOut, setFadingOut] = useState(false);
+  const [glitchingOut, setGlitchingOut] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,10 +20,10 @@ const MatrixIntro: React.FC = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const binary = "01";
-    const fontSize = 16;
     let columns = 0;
     let drops: number[] = [];
+    const fontSize = 16;
+    const binary = "01";
 
     function initializeMatrix() {
       if (!canvas) return;
@@ -36,17 +36,16 @@ const MatrixIntro: React.FC = () => {
 
     function drawMatrix() {
       if (!canvas || !ctx) return;
-      // draw translucent black background for trailing effect
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
       ctx.fillStyle = "#0f0";
       ctx.font = `${fontSize}px monospace`;
-
       for (let i = 0; i < drops.length; i++) {
         const text = binary.charAt(Math.floor(Math.random() * binary.length));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
         drops[i]++;
       }
     }
@@ -55,7 +54,6 @@ const MatrixIntro: React.FC = () => {
     const onResize = () => initializeMatrix();
     window.addEventListener("resize", onResize);
 
-    // timeouts (exact timings from your HTML)
     const timers: number[] = [];
     timers.push(window.setTimeout(() => setLine1Visible(true), 500));
     timers.push(
@@ -67,20 +65,20 @@ const MatrixIntro: React.FC = () => {
     timers.push(window.setTimeout(() => setLine3Visible(true), 3200));
     timers.push(window.setTimeout(() => setLine4Visible(true), 4000));
     timers.push(window.setTimeout(() => setStatusVisible(true), 4500));
+    
     timers.push(
       window.setTimeout(() => {
-        setFadingOut(true);
-        // wait the fade (1s) then navigate
+        setGlitchingOut(true);
         timers.push(
           window.setTimeout(() => {
+            setIsFinished(true);
             navigate("/home");
-          }, 400)
+          }, 800) // This duration should match the glitch animation time (0.8s)
         );
-      }, 6000)
+      }, 6500)
     );
 
     return () => {
-      // cleanup
       timers.forEach((t) => clearTimeout(t));
       window.clearInterval(matrixInterval);
       window.removeEventListener("resize", onResize);
@@ -89,6 +87,7 @@ const MatrixIntro: React.FC = () => {
 
   return (
     <div
+      className={glitchingOut ? "data-corruption-effect" : ""}
       style={{
         position: "relative",
         width: "100vw",
@@ -96,8 +95,7 @@ const MatrixIntro: React.FC = () => {
         overflow: "hidden",
         backgroundColor: "#000",
         fontFamily: "Courier New, Courier, monospace",
-        opacity: fadingOut ? 0 : 1,
-        transition: "opacity 1s ease-out",
+        display: isFinished ? 'none' : 'block',
       }}
     >
       <canvas
@@ -112,7 +110,6 @@ const MatrixIntro: React.FC = () => {
           zIndex: 1,
         }}
       />
-
       <div
         className="loader-box"
         style={{
@@ -128,93 +125,27 @@ const MatrixIntro: React.FC = () => {
           borderRadius: 15,
           boxShadow: "0 0 25px rgba(0, 255, 0, 0.3)",
           backdropFilter: "blur(5px)",
-          WebkitBackdropFilter: "blur(5px)",
           zIndex: 2,
           color: "#0f0",
           textShadow: "0 0 5px #0f0",
         }}
       >
-        <p
-          id="line1"
-          style={{
-            margin: "0 0 1rem 0",
-            fontSize: "0.9rem",
-            opacity: line1Visible ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
-            wordWrap: "break-word",
-          }}
-        >
+        <p style={{ margin: "0 0 1rem 0", fontSize: "0.9rem", opacity: line1Visible ? 1 : 0, transition: "opacity 0.5s ease-in-out", wordWrap: "break-word" }}>
           [INITIALIZING PORTFOLIO SYSTEM ...]
         </p>
-
-        <div
-          id="line2"
-          style={{
-            opacity: line2Visible ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
-          }}
-        >
+        <div style={{ opacity: line2Visible ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
           <p style={{ opacity: 1, marginBottom: 0 }}>Loading modules</p>
-          <div
-            className="progress-bar-container"
-            style={{
-              width: "100%",
-              height: 20,
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              border: "1px solid #0f0",
-              borderRadius: 5,
-              marginTop: 5,
-              marginBottom: "1rem",
-              overflow: "hidden",
-            }}
-          >
-            <div
-              id="progress-bar"
-              className="progress-bar-fill"
-              style={{
-                width: progressWidth,
-                height: "100%",
-                backgroundColor: "#0f0",
-                boxShadow: "0 0 10px #0f0",
-                transition: "width 1.5s ease-out",
-              }}
-            />
+          <div className="progress-bar-container" style={{ width: "100%", height: 20, backgroundColor: "rgba(0, 0, 0, 0.5)", border: "1px solid #0f0", borderRadius: 5, marginTop: 5, marginBottom: "1rem", overflow: "hidden" }}>
+            <div id="progress-bar" className="progress-bar-fill" style={{ width: progressWidth, height: "100%", backgroundColor: "#0f0", boxShadow: "0 0 10px #0f0", transition: "width 1.5s ease-out" }} />
           </div>
         </div>
-
-        <p
-          id="line3"
-          style={{
-            margin: "0 0 1rem 0",
-            fontSize: "0.9rem",
-            opacity: line3Visible ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
-          }}
-        >
+        <p style={{ margin: "0 0 1rem 0", fontSize: "0.9rem", opacity: line3Visible ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
           Deploying portfolio interface...
         </p>
-
-        <p
-          id="line4"
-          style={{
-            margin: "0 0 1rem 0",
-            fontSize: "0.9rem",
-            opacity: line4Visible ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
-          }}
-        >
+        <p style={{ margin: "0 0 1rem 0", fontSize: "0.9rem", opacity: line4Visible ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
           Launching portfolio...
         </p>
-
-        <p
-          id="status-ready"
-          style={{
-            color: "#ff4141",
-            textShadow: "0 0 5px #ff4141",
-            opacity: statusVisible ? 1 : 0,
-            transition: "opacity 0.5s ease-in-out",
-          }}
-        >
+        <p id="status-ready" style={{ color: "#ff4141", textShadow: "0 0 5px #ff4141", opacity: statusVisible ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
           Portfolio Ready.
         </p>
       </div>
