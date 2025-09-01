@@ -1,6 +1,6 @@
 // src/components/LeftSidebar.tsx
 
-import resumePDF from '../assets/Resume.pdf';
+import resumePDF from '../assets/Tanmay_Resume.pdf';
 const socialLinks = [
   {
     href: 'https://github.com/Tanmay-AW',

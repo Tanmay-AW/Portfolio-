@@ -1,7 +1,8 @@
 // src/components/Hero.tsx
 
 
-import GlitchLink from './GlitchLink'; // We'll use this for the button
+import GlitchLink from './GlitchLink'; 
+import resumePDF from '../assets/Tanmay_Resume.pdf';
 
 const Hero = () => {
   return (
@@ -32,12 +33,20 @@ const Hero = () => {
           I turn complex ideas into sleek, fast, and scalable apps that just work.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+        <div className="mt-10 flex flex-row items-center gap-6">
           <GlitchLink
             href="#contacts"
             text="Contact me"
             className="border border-green-400 text-green-400 px-8 py-3 font-semibold tracking-widest uppercase hover:bg-green-400/10 transition-colors duration-300"
           />
+          <a
+            href={resumePDF}
+            className="border border-green-400 text-green-400 px-8 py-3 font-semibold tracking-widest uppercase hover:bg-green-400/10 transition-colors duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
         </div>
       </div>
     </section>

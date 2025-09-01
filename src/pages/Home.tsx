@@ -1,6 +1,7 @@
 // src/pages/Home.tsx
 
-import { useState } from 'react';
+import * as React from 'react';
+
 
 // Import Page Section Components
 import Hero from '../components/Hero';
@@ -19,9 +20,22 @@ import DigitalRain from '../components/DigitalRain';
 import TerminalCaret from '../components/TerminalCaret';
 import EffectToggle from '../components/EffectToggle';
 
+
 const Home = () => {
+  // Scroll to contacts section if hash is present in URL
+  React.useEffect(() => {
+    if (window.location.hash === '#contacts') {
+      const el = document.getElementById('contacts');
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // slight delay to ensure DOM is ready
+      }
+    }
+  }, []);
+
   const effects = ['Off', 'Rain', 'Caret'];
-  const [effectIndex, setEffectIndex] = useState(0);
+  const [effectIndex, setEffectIndex] = React.useState(0);
 
   const handleToggle = () => {
     setEffectIndex((prevIndex) => (prevIndex + 1) % effects.length);

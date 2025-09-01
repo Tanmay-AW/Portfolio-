@@ -62,9 +62,9 @@ const MatrixIntro: React.FC = () => {
         setProgressWidth("100%");
       }, 1500)
     );
-    timers.push(window.setTimeout(() => setLine3Visible(true), 3200));
-    timers.push(window.setTimeout(() => setLine4Visible(true), 4000));
-    timers.push(window.setTimeout(() => setStatusVisible(true), 4500));
+    timers.push(window.setTimeout(() => setLine3Visible(true), 1500));
+    timers.push(window.setTimeout(() => setLine4Visible(true), 2000));
+    timers.push(window.setTimeout(() => setStatusVisible(true), 2500));
     
     timers.push(
       window.setTimeout(() => {
@@ -75,7 +75,7 @@ const MatrixIntro: React.FC = () => {
             navigate("/home");
           }, 800) // This duration should match the glitch animation time (0.8s)
         );
-      }, 6500)
+      }, 3500)
     );
 
     return () => {
